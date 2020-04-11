@@ -6,7 +6,8 @@ object Main {
 //    demoValue()
 //    demoNaming()
 //    demoType()
-    demoString()
+//    demoString()
+    demoTuple()
   }
 
   // 值
@@ -62,5 +63,31 @@ object Main {
     println(hello)
     val b: String = "Hello" + " there"
     println(b == hello) // 注意与JAVA的区别，Scala中"=="会检查字符串真正的相等性。
+    // 创建多行字符串
+    val s: String =
+      """
+        |这是一个多行字符串，
+        |abcdefg
+        |123456
+        |""".stripMargin
+
+    println(s)
+    // 字符串内插，相当于Java String.Format, C/C++ printf
+    val approx = 355/113f
+    println(s"Pi, using 355/113, is about $approx.")
+    val item = "apple"
+    println(s"How do you like their {$item}s")
+  }
+
+  // 元组
+  def demoTuple(): Unit = {
+    val info = (5, "Korben", true)
+    println(info._1) // 元组的第一个元素
+    // c创建一个大小为2的元组，可以利用关系操作符（->），它表示元祖中键-值对的流行的快捷方式
+    val red = "red" -> "0xff0000"
+    println(red) // (red,0xff0000)
+    val reversed = red._2 -> red._1
+    println(reversed) // (0xff0000,red)
+
   }
 }
