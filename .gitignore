@@ -1,3 +1,4 @@
 /.idea/
 /scala-repo.iml
 /scala-repo-basic/target/
+/scala-repo-basic/dependency-reduced-pom.xml
